@@ -1,0 +1,536 @@
+.appay-page {
+  --ap-bg-1: #ffffff;
+  --ap-bg-2: #ffffff;
+  --ap-surface: #ffffff;
+  --ap-surface-soft: #f8fafc;
+  --ap-border: #e5e7eb;
+  --ap-border-soft: #e2e8f0;
+  --ap-text: #0f172a;
+  --ap-muted: #64748b;
+  --ap-accent: #b8860b;
+  --ap-accent-strong: #8a6a09;
+  --ap-success: #22c55e;
+  min-height: 100vh;
+  padding: 1.75rem 0 2.35rem;
+  color: var(--ap-text);
+  background: #ffffff;
+}
+
+.appay-hero {
+  border: 1px solid var(--ap-border-soft);
+  background: var(--ap-surface);
+  border-radius: 16px;
+  padding: 1.25rem 1.3rem;
+  margin-bottom: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.appay-kicker {
+  margin: 0 0 0.25rem;
+  font-size: 0.76rem;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--ap-muted);
+}
+
+.appay-hero h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.95rem;
+  letter-spacing: -0.02em;
+}
+
+.appay-hero p {
+  margin: 0.35rem 0 0;
+  color: #475569;
+}
+
+.appay-hero-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.appay-btn {
+  border-radius: 10px;
+  padding: 0.52rem 0.85rem;
+  border: 1px solid transparent;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.appay-btn-soft {
+  border-color: var(--ap-border-soft);
+  background: var(--ap-surface-soft);
+  color: var(--ap-text);
+}
+
+.appay-btn-soft:hover {
+  background: rgba(184, 134, 11, 0.12);
+}
+
+.appay-btn-primary {
+  border-color: var(--ap-accent);
+  background: linear-gradient(140deg, rgba(184, 134, 11, 0.7) 0%, var(--ap-accent) 58%, var(--ap-accent-strong) 100%);
+  color: #fff;
+}
+
+.appay-btn-primary:hover {
+  background: linear-gradient(140deg, rgba(184, 134, 11, 0.85) 0%, var(--ap-accent) 58%, rgba(138, 106, 9, 0.98) 100%);
+}
+
+.appay-btn-ghost {
+  border-color: var(--ap-border-soft);
+  background: var(--ap-surface-soft);
+  color: var(--ap-text);
+}
+
+.appay-link {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #0f172a;
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.appay-link:hover {
+  color: var(--ap-accent-strong);
+}
+
+.appay-filter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.appay-presets {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.appay-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.appay-alert {
+  border: 1px solid var(--ap-border-soft);
+  background: var(--ap-surface-soft);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  color: #0f172a;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.appay-alert-error {
+  border-color: rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.08);
+  color: #991b1b;
+}
+
+.appay-invoice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
+.appay-invoice-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.appay-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  backdrop-filter: blur(6px);
+}
+
+.appay-drawer {
+  width: min(560px, 100%);
+  height: 100%;
+  background: #ffffff;
+  border-left: 1px solid var(--ap-border);
+  padding: 0.85rem 1rem 1.25rem;
+  overflow: auto;
+  box-shadow: -24px 0 60px rgba(15, 23, 42, 0.18);
+}
+
+.appay-drawer-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.25rem 0 0.85rem;
+  border-bottom: 1px solid var(--ap-border-soft);
+  margin-bottom: 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.appay-drawer-ident {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.appay-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.22), rgba(184, 134, 11, 0.08));
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  flex: 0 0 auto;
+}
+
+.appay-drawer-title {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: 1.1rem;
+  line-height: 1.15;
+}
+
+.appay-drawer-sub {
+  color: var(--ap-muted);
+  font-weight: 700;
+  margin-top: 0.25rem;
+  word-break: break-word;
+  max-width: 360px;
+}
+
+.appay-drawer-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.appay-kpi {
+  border: 1px solid var(--ap-border);
+  border-radius: 13px;
+  background: var(--ap-surface);
+  padding: 0.85rem;
+}
+
+.appay-kpi-label {
+  color: var(--ap-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  font-size: 0.73rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.appay-kpi-value {
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+.appay-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.appay-stat-card {
+  border: 1px solid var(--ap-border);
+  border-radius: 13px;
+  background: var(--ap-surface);
+  padding: 0.9rem;
+}
+
+.appay-stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ap-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  font-size: 0.73rem;
+}
+
+.appay-stat-card strong {
+  margin-top: 0.62rem;
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.appay-stat-card small {
+  color: #475569;
+  font-size: 0.79rem;
+}
+
+.appay-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.appay-grid-2 {
+  grid-template-columns: 1.55fr 1fr;
+}
+
+.appay-card {
+  border: 1px solid var(--ap-border);
+  background: var(--ap-surface);
+  border-radius: 13px;
+  padding: 0.95rem;
+  margin-bottom: 0.9rem;
+}
+
+.appay-card-head {
+  margin-bottom: 0.7rem;
+}
+
+.appay-card-head h3 {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1rem;
+  color: var(--ap-text);
+}
+
+.appay-card-head-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appay-chart {
+  height: 330px;
+}
+
+.appay-page .form-label {
+  color: var(--ap-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.appay-page .form-control,
+.appay-page .form-select {
+  background: var(--ap-surface-soft);
+  border: 1px solid var(--ap-border);
+  color: var(--ap-text);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.appay-page .form-control::placeholder {
+  color: #94a3b8;
+}
+
+.appay-page .form-control:focus,
+.appay-page .form-select:focus {
+  background: var(--ap-surface-soft);
+  border-color: #6366f1;
+  color: var(--ap-text);
+  box-shadow: 0 0 0 0.15rem rgba(99, 102, 241, 0.2);
+}
+
+.appay-table-wrap {
+  border: 1px solid var(--ap-border);
+  border-radius: 10px;
+}
+
+.appay-table {
+  margin: 0;
+  color: var(--ap-text);
+}
+
+.appay-table th {
+  background: var(--ap-surface-soft);
+  color: #334155;
+  border-bottom: 1px solid var(--ap-border-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.75rem;
+  padding: 0.8rem 0.7rem;
+}
+
+.appay-table td {
+  border-color: var(--ap-border-soft);
+  padding: 0.78rem 0.7rem;
+  vertical-align: middle;
+  font-size: 0.87rem;
+}
+
+.appay-table tbody tr:hover {
+  background: rgba(184, 134, 11, 0.08);
+}
+
+.appay-uuid {
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.04);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 7px;
+  padding: 0.18rem 0.42rem;
+}
+
+.appay-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.appay-client-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ap-accent-strong);
+  background: rgba(184, 134, 11, 0.16);
+}
+
+.appay-amount {
+  color: #0f172a;
+}
+
+.appay-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.26rem 0.56rem;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+
+.appay-status-paid {
+  color: #15803d;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+}
+
+.appay-status-unpaid {
+  color: #7f1d1d;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+}
+
+.appay-status-pending {
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+}
+
+.appay-status-failed {
+  color: #991b1b;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.22);
+}
+
+.appay-date {
+  color: var(--ap-muted);
+}
+
+.appay-empty-state {
+  text-align: center;
+  padding: 2.3rem 1rem;
+}
+
+.appay-empty-state svg {
+  color: #95a4bf;
+}
+
+.appay-empty-state h5 {
+  margin-top: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+
+.appay-empty-state p {
+  color: var(--ap-muted);
+  margin: 0;
+}
+
+.appay-spinner {
+  color: var(--ap-accent);
+}
+
+@media (max-width: 992px) {
+  .appay-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .appay-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .appay-page {
+    padding: 1rem 0 1.45rem;
+  }
+
+  .appay-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appay-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .appay-hero-actions {
+    width: 100%;
+  }
+
+  .appay-btn-soft {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .appay-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appay-invoice-kpis,
+  .appay-drawer-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .appay-table th,
+  .appay-table td {
+    font-size: 0.8rem;
+    padding: 0.62rem 0.5rem;
+  }
+}

@@ -1,0 +1,27 @@
+{"level":"error","message":"Failed to send verification email to wisdomokorafor555@gmail.com: nodemailer.createTransporter is not a function","service":"email-service","timestamp":"2025-12-23T05:28:31.208Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor555@gmail.com for company David Francis","service":"email-service","timestamp":"2025-12-23T05:32:12.395Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company David Francis","service":"email-service","timestamp":"2025-12-23T05:34:02.314Z"}
+{"level":"info","message":"Verification email sent successfully to testcompany@example.com for company Test Company","service":"email-service","timestamp":"2025-12-23T06:03:35.516Z"}
+{"level":"info","message":"Verification email sent successfully to testcompany2@example.com for company Test Company","service":"email-service","timestamp":"2025-12-23T06:08:21.734Z"}
+{"level":"info","message":"Verification email sent successfully to frontendtest@example.com for company Frontend Test Company","service":"email-service","timestamp":"2025-12-23T06:14:04.949Z"}
+{"level":"info","message":"Verification email sent successfully to chiokk223@gmail.com for company aptech","service":"email-service","timestamp":"2025-12-23T07:06:37.007Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company aptech","service":"email-service","timestamp":"2025-12-23T18:54:07.735Z"}
+{"level":"info","message":"Verification email sent successfully to chisomwork17@gmail.com for company chisom okorafor","service":"email-service","timestamp":"2025-12-30T00:16:25.018Z"}
+{"level":"info","message":"Verification email sent successfully to test@example.com for company Test User","service":"email-service","timestamp":"2026-01-01T01:16:22.757Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company ikechi okorafor","service":"email-service","timestamp":"2026-01-01T12:10:01.308Z"}
+{"level":"info","message":"Verification email sent successfully to wizzy555okorafor@gmail.com for company chisomfy","service":"email-service","timestamp":"2026-01-02T11:22:11.775Z"}
+{"level":"info","message":"Verification email sent successfully to wizzy555okorafor@gmail.com for company chisomfy","service":"email-service","timestamp":"2026-01-02T11:54:59.112Z"}
+{"level":"info","message":"Verification email sent successfully to wizzy555okorafor@gmail.com for company chisomfy","service":"email-service","timestamp":"2026-01-10T11:16:40.640Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company ikechi okorafor","service":"email-service","timestamp":"2026-01-11T12:34:30.576Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company chisom okorafor","service":"email-service","timestamp":"2026-01-29T20:09:03.910Z"}
+{"level":"info","message":"Verification email sent successfully to wizzy555okorafor@gmail.com for company aptech","service":"email-service","timestamp":"2026-01-29T20:10:47.444Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company chisom okorafor","service":"email-service","timestamp":"2026-01-29T20:59:32.177Z"}
+{"level":"info","message":"Verification email sent successfully to danielnwosu341@gmail.com for company Danie lnwosu","service":"email-service","timestamp":"2026-01-30T13:31:24.641Z"}
+{"level":"info","message":"Verification email sent successfully to dnwosu455@gmail.com for company Aptech","service":"email-service","timestamp":"2026-01-30T13:45:16.824Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company chisom okorafor","service":"email-service","timestamp":"2026-03-09T11:17:43.467Z"}
+{"level":"info","message":"Verification email sent successfully to wizzy555okorafor@gmail.com for company chisomfy","service":"email-service","timestamp":"2026-03-09T12:36:56.257Z"}
+{"level":"info","message":"Verification email sent successfully to wisdomokorafor11@gmail.com for company chisom okorafor","service":"email-service","timestamp":"2026-03-10T10:10:43.064Z"}
+{"level":"info","message":"Verification email sent successfully to chisomwork17@gmail.com for company APTECH","service":"email-service","timestamp":"2026-03-10T10:15:21.589Z"}
+{"level":"error","message":"Failed to send verification email to wisdomokorafor11@gmail.com: queryA ETIMEOUT smtp.gmail.com","service":"email-service","timestamp":"2026-03-11T12:54:24.593Z"}
+{"level":"error","message":"Failed to send verification email to chisomwork17@gmail.com: queryA ETIMEOUT smtp.gmail.com","service":"email-service","timestamp":"2026-03-11T12:58:37.587Z"}
+{"level":"info","message":"Verification email sent successfully to dnwosu455@gmail.com for company nnamdi Kalu","service":"email-service","timestamp":"2026-03-13T13:14:21.289Z"}

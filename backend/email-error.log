@@ -1,0 +1,3 @@
+{"level":"error","message":"Failed to send verification email to wisdomokorafor555@gmail.com: nodemailer.createTransporter is not a function","service":"email-service","timestamp":"2025-12-23T05:28:31.208Z"}
+{"level":"error","message":"Failed to send verification email to wisdomokorafor11@gmail.com: queryA ETIMEOUT smtp.gmail.com","service":"email-service","timestamp":"2026-03-11T12:54:24.593Z"}
+{"level":"error","message":"Failed to send verification email to chisomwork17@gmail.com: queryA ETIMEOUT smtp.gmail.com","service":"email-service","timestamp":"2026-03-11T12:58:37.587Z"}

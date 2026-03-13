@@ -1,0 +1,1 @@
+{"level":"error","message":"Failed to send verification email to chisomwork17@gmail.com: Email sending failed: queryA ETIMEOUT smtp.gmail.com","service":"admin-service","timestamp":"2026-03-11T12:58:37.588Z"}

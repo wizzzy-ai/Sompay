@@ -1,0 +1,146 @@
+.ajr-page {
+  padding: 18px 0 40px;
+}
+
+.ajr-page.ajr-page-light {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.ajr-page.ajr-page-light .ajr-head p {
+  color: #475569;
+}
+
+.ajr-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ajr-head h1 {
+  margin: 0 0 6px;
+}
+
+.ajr-head p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.ajr-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+  padding: 14px;
+}
+
+.ajr-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.ajr-muted {
+  color: #64748b;
+  font-size: 14px;
+  padding: 10px 2px;
+}
+
+.ajr-alert {
+  border-radius: 12px;
+  padding: 11px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  margin-bottom: 12px;
+}
+
+.ajr-list {
+  display: grid;
+  gap: 10px;
+}
+
+.ajr-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 14px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.ajr-name {
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ajr-meta {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.ajr-msg {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.ajr-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.ajr-btn {
+  border: none;
+  border-radius: 11px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ajr-btn-primary {
+  color: #111827;
+  background: linear-gradient(135deg, #d4af37 0%, #f4db85 100%);
+}
+
+.ajr-btn-danger {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+.ajr-btn-soft {
+  color: #111827;
+  border: 1px solid #dbe3ef;
+  background: #ffffff;
+}
+
+.ajr-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .ajr-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ajr-actions {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,13 @@
+.message-item{display:flex;align-items:flex-start;gap:12px;padding:10px;border-radius:10px;margin-bottom:6px}
+.message-item.sent{justify-content:flex-end}
+.message-item.received{justify-content:flex-start}
+.message-content{max-width:78%;background:rgba(255,255,255,0.03);padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.message-item.sent .message-content{background:linear-gradient(90deg, rgba(124,58,237,0.15), rgba(79,70,229,0.08));border:none;color:#fff}
+.message-item.received .message-content{background:rgba(255,255,255,0.02)}
+.message-content p{margin:0 0 6px 0;word-break:break-word}
+.message-time{display:block;font-size:12px;color:rgba(255,255,255,0.55);text-align:right}
+.message-date{display:flex;justify-content:center;margin:12px 0;color:rgba(255,255,255,0.5);font-size:13px}
+
+@media (max-width:480px){
+  .message-content{max-width:86%}
+}

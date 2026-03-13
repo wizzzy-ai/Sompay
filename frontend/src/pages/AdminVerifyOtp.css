@@ -1,0 +1,236 @@
+/* Admin Verify OTP Page Styles */
+.admin-verify-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.admin-verify-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-verify-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #6610f2);
+}
+
+.admin-verify-header {
+  margin-bottom: 30px;
+}
+
+.admin-verify-icon {
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 15px;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 50%;
+}
+
+.admin-verify-header h2 {
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-verify-header p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+.admin-verify-error {
+  background: #fee;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #fcc;
+  font-size: 14px;
+}
+
+.admin-verify-success {
+  background: #efe;
+  color: #363;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #cfc;
+  font-size: 14px;
+}
+
+.admin-verify-form {
+  margin-bottom: 30px;
+}
+
+.admin-verify-input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.admin-verify-input-group label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.admin-verify-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.admin-verify-input:focus {
+  outline: none;
+  border-color: #007bff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.admin-verify-btn {
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.admin-verify-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+.admin-verify-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-verify-resend {
+  margin-bottom: 20px;
+}
+
+.admin-verify-resend p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.admin-verify-resend-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.admin-verify-resend-btn:hover:not(:disabled) {
+  color: #6610f2;
+}
+
+.admin-verify-resend-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.admin-verify-back {
+  margin-top: 20px;
+}
+
+.admin-verify-back-btn {
+  background: #f8f9fa;
+  border: 2px solid #e1e5e9;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.admin-verify-back-btn:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+  color: #495057;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .admin-verify-container {
+    padding: 10px;
+  }
+
+  .admin-verify-card {
+    padding: 30px 20px;
+  }
+
+  .admin-verify-header h2 {
+    font-size: 24px;
+  }
+
+  .admin-verify-input {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .admin-verify-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.admin-verify-btn:disabled {
+  animation: pulse 1.5s infinite;
+}
