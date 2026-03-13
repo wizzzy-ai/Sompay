@@ -4,13 +4,8 @@ import App from './App.jsx'
 
 // Load non-critical CSS asynchronously after initial render
 const loadNonCriticalCSS = () => {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = '/src/index.css';
-  link.onload = () => {
-    // CSS loaded, can add any post-load logic here
-  };
-  document.head.appendChild(link);
+  // Vite will turn this into a real asset URL in production builds.
+  import('./index.css');
 };
 
 // Load CSS after initial paint
