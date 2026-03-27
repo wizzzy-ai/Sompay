@@ -38,6 +38,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
+  const [redirectEmail, setRedirectEmail] = useState('');
   const redirectTimersRef = useRef([]);
 
   useEffect(() => {
@@ -78,6 +79,7 @@ const Register = () => {
       setSuccess(true);
       reset();
       sessionStorage.setItem('pendingVerifyEmail', data.email);
+      setRedirectEmail(data.email);
 
       // Redirect to OTP verification (navigate + hard fallback in case router navigation fails)
       const otpPath = `/verify-otp?email=${encodeURIComponent(data.email)}`;
@@ -172,6 +174,17 @@ const Register = () => {
                         <div className="redirect-progress-text" aria-hidden="true">
                           {Math.max(1, Math.round(redirectProgress))}%
                         </div>
+                        <button
+                          type="button"
+                          className="redirect-now-btn"
+                          onClick={() => {
+                            const emailValue = redirectEmail || sessionStorage.getItem('pendingVerifyEmail') || '';
+                            const otpPathNow = `/verify-otp?email=${encodeURIComponent(emailValue)}`;
+                            navigate(otpPathNow, { state: { email: emailValue } });
+                          }}
+                        >
+                          Go to OTP page now
+                        </button>
 	                    </div>
 	                  </motion.div>
 	                </motion.div>
