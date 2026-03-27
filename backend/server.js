@@ -50,20 +50,45 @@ if (!process.env.JWT_ACCESS_SECRET) {
   // (Kept as warning so the server can still boot for non-auth endpoints.)
   console.warn('Warning: JWT_ACCESS_SECRET is not set. Login/protected routes will fail.');
 }
-const allowedOrigins = (
+const normalizeOrigin = (value) => String(value || '').trim().replace(/\/+$/, '');
+
+const allowedOriginEntries = (
   process.env.FRONTEND_ORIGIN ||
   process.env.FRONTEND_URL ||
   'http://localhost:5173'
 )
-	  .split(',')
-	  .map(o => o.trim())
-	  .filter(Boolean);
+  .split(',')
+  .map(normalizeOrigin)
+  .filter(Boolean);
+
+const isOriginAllowed = (origin) => {
+  const safeOrigin = normalizeOrigin(origin);
+  if (!safeOrigin) return true;
+
+  if (allowedOriginEntries.includes(safeOrigin)) return true;
+
+  // Support simple wildcard entries like "*.vercel.app"
+  const host = (() => {
+    try {
+      return new URL(safeOrigin).hostname;
+    } catch {
+      return '';
+    }
+  })();
+  if (!host) return false;
+
+  return allowedOriginEntries.some((entry) => {
+    if (!entry.startsWith('*.')) return false;
+    const suffix = entry.slice(1); // ".vercel.app"
+    return host.endsWith(suffix);
+  });
+};
 
 app.use(cors({
 	  origin: (origin, cb) => {
 	    if (!origin) return cb(null, true);
-	    if (allowedOrigins.includes(origin)) return cb(null, true);
-	    return cb(new Error(`CORS blocked for origin: ${origin}`));
+	    if (isOriginAllowed(origin)) return cb(null, true);
+	    return cb(null, false);
 	  },
 	  credentials: true,
 	  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],

@@ -64,14 +64,37 @@ if (process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET) {
   console.warn('GitHub OAuth disabled: missing GITHUB_CLIENT_ID/GITHUB_CLIENT_SECRET');
 }
 
-const envAllowedOrigins = (
+const normalizeOrigin = (value) => String(value || '').trim().replace(/\/+$/, '');
+
+const envAllowedOriginEntries = (
   process.env.FRONTEND_ORIGIN ||
   process.env.FRONTEND_URL ||
   ''
 )
   .split(',')
-  .map((value) => value.trim())
+  .map(normalizeOrigin)
   .filter(Boolean);
+
+const isEnvOriginAllowed = (origin) => {
+  const safeOrigin = normalizeOrigin(origin);
+  if (!safeOrigin) return true;
+  if (envAllowedOriginEntries.includes(safeOrigin)) return true;
+
+  const host = (() => {
+    try {
+      return new URL(safeOrigin).hostname;
+    } catch {
+      return '';
+    }
+  })();
+  if (!host) return false;
+
+  return envAllowedOriginEntries.some((entry) => {
+    if (!entry.startsWith('*.')) return false;
+    const suffix = entry.slice(1);
+    return host.endsWith(suffix);
+  });
+};
 
 const allowedOriginPatterns = [
   /^http:\/\/localhost:\d+$/,
@@ -89,7 +112,7 @@ const allowedOriginPatterns = [
 	    }
 
 	    const isAllowed =
-        envAllowedOrigins.includes(origin) ||
+        isEnvOriginAllowed(origin) ||
         allowedOriginPatterns.some((pattern) => pattern.test(origin));
 	    callback(isAllowed ? null : new Error(`CORS blocked for origin: ${origin}`), isAllowed);
 	  },
