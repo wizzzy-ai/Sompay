@@ -66,10 +66,18 @@ const Register = () => {
       setSuccess(true);
       reset();
       sessionStorage.setItem('pendingVerifyEmail', data.email);
-      // Redirect to OTP verification
+
+      // Redirect to OTP verification (navigate + hard fallback in case router navigation fails)
+      const otpPath = `/verify-otp?email=${encodeURIComponent(data.email)}`;
+      navigate(otpPath, { state: { email: data.email } });
       setTimeout(() => {
-        navigate(`/verify-otp?email=${encodeURIComponent(data.email)}`, { state: { email: data.email } });
-      }, 500);
+        const base = String(import.meta.env.BASE_URL || '/');
+        const baseWithSlash = base.endsWith('/') ? base : `${base}/`;
+        const fallbackUrl = `${baseWithSlash.replace(/\\/g, '/')}${otpPath.replace(/^\//, '')}`;
+        if (window.location.pathname.includes('/register')) {
+          window.location.assign(fallbackUrl);
+        }
+      }, 900);
     } catch (error) {
       const serverMessage = error.response?.data?.error || error.response?.data?.message;
       if (serverMessage) {
